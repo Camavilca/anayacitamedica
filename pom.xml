@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.camavilca</groupId>
-    <artifactId>panamericanos</artifactId>
+    <artifactId>hospital</artifactId>
     <version>1.0</version>
 
     <name>hospital</name>
@@ -102,6 +102,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source> 
+                    <target>1.7</target> 
+                </configuration>
             </plugin>
         </plugins>
     </build>
