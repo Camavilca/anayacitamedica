@@ -97,10 +97,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-<!--                <configuration>
+                <configuration>
                     <source>1.7</source> 
                     <target>1.7</target> 
-                </configuration>-->
+                </configuration>
             </plugin>
         </plugins>
         <finalName>hospital</finalName>
