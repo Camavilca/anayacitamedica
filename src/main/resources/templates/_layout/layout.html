@@ -1,0 +1,17 @@
+<html layout:decorator="_layout/base">
+
+    <div layout:fragment="BODY">
+
+        <aside th:replace="_layout/menu :: SIDEBAR"></aside>
+
+        <div id="content" class="app-content box-shadow-4 box-radius-4" role="main">
+
+            <header th:replace="_layout/menu :: TOPBAR"></header>
+
+            <div class="content-main " id="content-main"> 
+                
+                <section layout:fragment="CONTAINER"></section>
+            </div>
+        </div>
+    </div>    
+</html>

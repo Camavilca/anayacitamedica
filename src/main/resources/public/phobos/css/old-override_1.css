@@ -1,0 +1,568 @@
+/* FORMS */
+.input-center{
+    display: inherit;
+}
+
+input.error{
+    background: #FFCCCC;
+}
+
+.m-t-sxl {
+    margin-top: 70px;
+}
+
+/* HACER QUE EL HEAD DE UN TABLE QUEDE FIJO */
+.header-fixed {
+    width: 100%
+}
+
+.header-fixed > thead,
+.header-fixed > tbody,
+.header-fixed > thead > tr,
+.header-fixed > tbody > tr,
+.header-fixed > thead > tr > th,
+.header-fixed > tbody > tr > td {
+    display: block;
+}
+
+.header-fixed > tbody > tr:after,
+.header-fixed > thead > tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.header-fixed > tbody {
+    overflow-y: auto;
+    height: 500px;
+}
+
+.header-fixed > tbody > tr > td,
+.header-fixed > thead > tr > th {
+    /*width: 25%;*/
+    float: left;
+}
+
+/* PANEL WINDOW */
+
+.modalize {
+    min-height: 20em;
+    max-height: 25em;
+}
+
+/*programación de horarios */
+
+.horario {
+    border-radius: 0.25em;
+    display: inline;
+    font-size: 75%;
+    font-weight: normal;
+    line-height: 1;
+    padding: 0.2em 0.6em 0.3em;
+    text-align: center;
+    vertical-align: baseline;
+    color:white;
+}
+
+.horas{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 10em;
+}
+
+
+/* HORARIO */
+
+.horario-curso{
+    font-size:0.95em;
+}
+
+
+/* TEXT */
+
+.subtext-sm{
+    font-size: 12px;
+    color: #666;
+    display: block;
+}
+
+
+.subtext-xs{
+    font-size: 11px;
+    color: #666;
+    display: block;
+}
+
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.fill-recurso{
+    height: 120px;
+    margin: 20px 0 10px 0;
+}
+
+
+/* ---------- HEADER ---------- */
+.nav-user{
+    padding: 20px 0px;
+}
+
+.nav-user > li > a:hover,
+.nav-user  > li > a:focus{
+    background: transparent !important;
+}
+
+.avatar-text{
+    display: block;
+    position: relative;
+    float: left;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    line-height: 40px;
+    background-color: white;
+    color: #1A2C47;
+    text-align: center;
+    font-size: 16px;
+    margin-right: 12px;
+    text-indent: 0;
+    margin-top: -10px;
+}
+
+.elipsis-name{
+    width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.avatar-name{
+    font-size: 14px;
+    line-height: 1;
+}
+
+.role{
+    font-size: 10px;
+    display: block;
+    color: #bff6eb;
+    line-height: 8px;
+}
+
+
+
+
+
+
+/* ---------- Editor de preguntas ---------- */
+
+.transparent_class a{
+    visibility: hidden;
+}
+.pregunta_marco_desempeno:hover .transparent_class a{
+    visibility: visible;
+}
+.pregunta_marco_desempeno{
+    padding: 2em 3em 1.5em 3em;
+    border: 2px dashed white;
+    border-width: 1.5px;
+}
+.pregunta_marco_desempeno:hover{
+    padding: 2em 3em 1.5em 3em;
+    border: 2px dashed #e8e8e8;
+    border-width: 1.5px;
+}
+
+div.pregunta_marco_desempeno:hover{
+    cursor: move;
+}
+
+
+/*----------- WIZARD MODAL ----------------*/
+
+.pager.wizard{
+    margin: 0;
+}
+
+.tooltip-wide .tooltip {min-width: 350px; text-align: left;}
+
+
+.bg-video{
+    background: black;
+}
+
+.vbox > section.w-f-xl {
+    bottom: 150px;
+}
+
+/*----------- PROFILE ----------------*/
+
+.f-nav{ z-index: 999; position: fixed; left: 0; top: 0; width: 100%; margin-top: 50px;}
+
+.back-profile {
+    background:rgba(10,10,10,0.1);
+    background: url(../images/cover.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.label-perfil, .control-label{
+    font-weight: 400;
+    color: #666;
+}
+
+
+
+/*---------------------------------------*/
+
+
+
+
+/* TEXT LEFT SMALL*/
+
+@media only screen and (min-width: 767px) {
+    .text-right-sm{
+        text-align: right;
+    }
+}
+
+/* DyntaTable Bootstrap*/
+
+
+.dynatable-paginate {
+    margin: 0;
+    white-space: nowrap;
+    text-align: right;
+}
+
+.dynatable-record-count {
+    padding-left: 15px;
+    white-space: nowrap;
+    font-size: 0.9em;
+    color: #777777;
+}
+
+
+
+.fa-5 {
+    font-size: 7em;
+}
+
+.overlord {
+    z-index:2000;
+}
+
+/*table reporte*/
+
+.highcharts-tooltip>span {
+    background: white;
+    border: 1px solid silver;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px #888;
+    padding: 8px;
+}
+
+/* Acompañamiento  */
+
+
+.qard {
+    padding: 15px 5px;
+    height: 150px;
+    margin-bottom: 50px;
+    text-align: center;
+    border-top-width: 3px;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.1), 0px 1px 1px rgba(0,0,0,0.1) ;
+}
+
+.qard:hover{
+    cursor: pointer;
+}
+
+.qard.qard-default{
+    border-top-color: #dae0ed;
+}
+
+.qard.qard-default:hover{
+    border-color: #dae0ed;
+}
+.qard.qard-info{
+    border-top-color: #3b9ff3;
+}
+.qard.qard-info:hover{
+    border-color: #3b9ff3;
+}
+
+.qard.qard-success{
+    border-top-color: #29b765;
+}
+
+.qard.qard-success:hover{
+    border-color: #29b765;
+}
+
+
+.datepicker {
+    z-index: 99999 !important;
+}
+
+
+
+/* FILE UPLOAD */
+#upload{
+    margin: 5px 0px;
+    list-style: none;
+}
+
+#upload p{
+    display: inline;
+    margin: 0.2em;
+    font-size: 0.9em;
+}
+
+#upload li span{
+    display: inline-block;
+    cursor:pointer;
+}
+
+#upload li.error p{
+    color: red;
+}
+
+
+
+
+
+
+/* SUB-BAR */
+#subBar {
+    padding-left: 20px;
+}
+.tabbable-panel {
+    border: 1px solid #eee;
+    padding: 10px;
+}
+.tabbable-line > .nav-tabs {
+    margin: 0px;
+    border-bottom: 1px solid #ccc;
+}
+.tabbable-line > .nav-tabs > li > a {
+    border: 0;
+    color: #888;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.tabbable-line > .nav-tabs > li > a > i {
+    color: #737373;
+}
+.tabbable-line > .nav-tabs > li.open,
+.tabbable-line > .nav-tabs > li:hover {
+    border-bottom: 2px solid #a6a6a6;
+}
+.tabbable-line > .nav-tabs > li.open > a,
+.tabbable-line > .nav-tabs > li:hover > a {
+    border: 0;
+    background: none !important;
+    color: #666;
+    transition: border-color 500ms;
+}
+.tabbable-line > .nav-tabs > li.open > a > i,
+.tabbable-line > .nav-tabs > li:hover > a > i {
+    color: #333333;
+}
+.tabbable-line > .nav-tabs > li.open .dropdown-menu,
+.tabbable-line > .nav-tabs > li:hover .dropdown-menu {
+    margin-top: 0px;
+}
+.tabbable-line > .nav-tabs > li.active {
+    border-bottom: 2px solid #2ecc71;
+    position: relative;
+}
+.tabbable-line > .nav-tabs > li.active > a {
+    border: 0;
+    font-weight: bold;
+    color: #333333;
+    background: none !important;
+}
+
+/* Cobranza style -start*/
+
+/* style special tab */
+a.btn-tab.active,
+a.btn-tab:active,
+a.btn-tab:focus ,
+a.btn-tab:hover {
+    text-decoration: none;
+    border-bottom-color: #007299;
+    color: #007299;
+    box-shadow: none;
+}
+
+/* nav tab pills style theme */
+a.btn-tab-nav.active,
+a.btn-tab-nav:active,
+a.btn-tab-nav:focus,
+a.btn-tab-nav:hover
+{
+    text-decoration: none;
+    border-bottom-color: #5cb85c;
+    color: #5cb85c;
+    box-shadow: none;
+    border-width: 2px;
+}
+a.btn-tab-nav
+{
+    border-width: 2px;
+}
+
+/* HACER QUE EL HEAD DE UN TABLE QUEDE FIJO */
+.header-fixed {
+    width: 100%
+}
+
+.header-fixed > thead,
+.header-fixed > tbody,
+.header-fixed > thead > tr,
+.header-fixed > tbody > tr,
+.header-fixed > thead > tr > th,
+.header-fixed > tbody > tr > td {
+    display: block;
+}
+
+.header-fixed > tbody > tr:after,
+.header-fixed > thead > tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.header-fixed > tbody {
+    overflow-y: auto;
+    height: 500px;
+}
+
+.header-fixed > tbody > tr > td,
+.header-fixed > thead > tr > th {
+    /*width: 25%;*/
+    float: left;
+}
+
+.timeline.left:before {
+    background-color: #ddd;
+    bottom: 30px;
+    content: "";
+    left: 10%;
+    margin-left: -1px;
+    position: absolute;
+    top: 0;
+    width: 1px;
+    z-index: 0;
+}
+
+
+.timeline-caption.left {
+    display: block;
+    margin-left: 10%;
+    vertical-align: top;
+    width: 90%;
+}
+
+.table-cobranzas>tbody>tr>td{
+    border-top: 0px;
+}
+
+/* Cobranza style end */
+
+
+.bootstrap-timepicker-widget.dropdown-menu {
+    z-index: 1050!important;
+}
+.bootstrap-timepicker-widget.dropdown-menu.open{
+    position:absolute;
+}
+
+.logo{
+    width: 230px;
+    height: 62px;
+    color: #fff;
+    position: relative;
+    margin: 20px 20px;
+    background: url(../images/logo.png) no-repeat center center;
+}
+
+.contenedor-secciones{
+    position: relative;
+    overflow-y: auto;
+    height: 300px;
+    padding-top: 20px;
+}
+
+
+
+/* Nuevo Header */
+.banner{
+    background: url("../images/banner.jpg") no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 110px !important;
+    margin-bottom: 20px;
+    position: relative;
+    padding: 20px 50px;
+}
+
+.banner h1{
+    color:white;
+}
+
+.vbox > header ~ section{
+    top: 220px;
+}
+
+.left-navigation{
+    margin-top: 40px;
+}
+
+.left-navigation .nav-pills .active{
+    border-left: solid 5px #2ECC71;
+
+}
+.left-navigation .nav-pills > li > a {
+    padding: 15px 20px;
+    text-transform: uppercase;
+    color: #9B9B9B;
+    font-family: "Montserrat", "Helvetica Neue", "Arial", sans-serif;
+    border-radius: 0px 4px 4px 0px;
+}
+
+.left-navigation .nav-pills > li.active > a{
+    background: #f0f2f8;
+    color: #1A2C47 !important;
+    font-weight: bold;
+}
+
+.navbar-center{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin: auto;
+    padding: 10px 0px;
+
+}
+
+

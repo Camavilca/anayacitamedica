@@ -1,0 +1,49 @@
+<template id="vue-date-picker">
+    <div>   
+        <div class="input-group">
+            <date-picker required="" v-model="obj[field]" v-bind:config="dateConfig" v-bind:wrap="true"></date-picker>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+        </div>
+    </div>
+</template>
+<script>
+    /*<![CDATA[*/
+    Vue.component("date-picker", window.VueBootstrapDatetimePicker.default);
+
+    Vue.component("vueDatePicker", {
+        template: '#vue-date-picker',
+        props: {
+            obj: {
+                type: Object
+            },
+            field: {
+                type: String
+            },
+            defaultToday: {
+                type: Boolean,
+                default: true
+            }
+        },
+        beforeMount() {
+
+        },
+        data() {
+            return {
+                displayDate: '',
+                dateConfig: {
+                    format: 'DD/MM/YYYY',
+                    locale: 'es'
+                }
+            }
+        },
+        watch: {
+            'obj[field]'() {
+                console.log(this.obj, this.field);
+
+            }
+        }
+    });
+    /*]]>*/
+</script>

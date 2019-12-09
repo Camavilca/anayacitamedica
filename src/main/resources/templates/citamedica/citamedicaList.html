@@ -1,0 +1,55 @@
+<raptor-table v-bind:url="allURL" v-bind:preload="false" ref="load">
+    <div slot="header">
+        <div class="col-md-2 d-flex justify-content-end">
+            <button id="show-modal" class="btn btn-outline-info btn-block" v-on:click="openModalCitaMedica">Nuevo</button>
+        </div>
+    </div>
+    <template scope="props">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Medico</th>
+                    <th>Paciente</th>
+                    <th>Fecha Inicio</th>
+                    <th>Fecha Fin</th>
+                    <th>Asunto</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                </td>
+                <tr v-for="item in props.data">
+                    <td>
+                        <span v-text="item.medico.nombre"></span>
+                    <td>
+                        <span v-text="item.paciente.nombre"></span>
+                    </td>
+                    <td>
+                        <span v-text="item.fechaInicio"></span>
+                    </td>
+                    <td>
+                        <span v-text="item.fechaFin"></span>
+                    </td>
+                    <td>
+                        <span v-text="item.asunto"></span>
+                    </td>
+                    <td class="d-flex justify-content-end">
+                        <div class="btn-group dropleft">
+                            <a data-toggle="dropdown">
+                                <i class="fa fa-ellipsis-v-alt"></i>
+                            </a>
+                            <div class="dropdown-menu pull-left" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" v-on:click="update(item)">
+                                    Editar
+                                </a>
+                                <a class="dropdown-item" v-on:click="eliminar(item)">
+                                    Eliminar
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </template>
+</raptor-table>

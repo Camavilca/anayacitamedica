@@ -1,0 +1,32 @@
+<modal-vik ref="pacienteModal"
+           v-bind="pacienteModal"
+           v-bind:okaction="save">
+    <div slot="body">
+        <div class="card-body ">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input placeholder="Ingrese nombre" v-model="paciente.nombre" class="form-control" required="true"/>
+            </div>
+            <div class="form-group">
+                <label for="paterno">Apellido Paterno</label>
+                <input placeholder="Ingrese paterno" v-model="paciente.paterno" class="form-control" required="true"/>
+            </div>
+            <div class="form-group">
+                <label for="materno">Apellido Materno</label>
+                <input placeholder="Ingrese materno" v-model="paciente.materno" class="form-control" required="true"/>
+            </div>
+            <div class="form-group">
+                <label for="direccion">Direccion</label>
+                <input placeholder="Ingrese direccion" v-model="paciente.direccion" class="form-control" required="true"/>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input placeholder="Ingrese email" v-model="paciente.email" class="form-control" required="true"/>
+            </div>
+            <div class="form-group">
+                <label for="nombre">Telefono</label>
+                <input placeholder="Ingrese telefono" v-model="paciente.telefono" class="form-control" required="true"/>
+            </div>
+        </div>
+    </div>
+</modal-vik>

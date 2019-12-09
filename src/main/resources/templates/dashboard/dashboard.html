@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html layout:decorator="_layout/layout">
+    <head>
+        <title>Dashboard</title>
+    </head>
+
+    <body>
+        <div layout:fragment="CONTAINER">
+            <section id="medicoVUE" class="animated fadeInDown  m-t-sxl" v-cloak="">
+                <div class="container-fluid m-4">
+                    <div class="row mb-4">
+                        <div class="col-md-4">
+                            <h2 class="text-primary">
+                                Cita Medica
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 col-md-5">
+                            <img class="rounded mx-auto d-block" src="https://img.freepik.com/vector-gratis/edificio-hospital-ciudad-ambulancia-helicoptero_1214-286.jpg?size=626&ext=jpg"/>
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <table class="table">
+                                        <tr>
+                                            <td>
+                                                <a href="" class="btn btn-primary btn-block">
+                                                    <i class="fa fa-users"></i>
+                                                    <span class="mx-5">Medicos</span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="" class="btn btn-success btn-block">
+                                                    <i class="fa fa-users"></i>
+                                                    <span class="mx-5">Pacientes</span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div layout:fragment="JS">
+            <script th:inline="javascript">
+                /*<![CDATA[*/
+                var rutaModulo = /*[[${rutaModulo}]]*/ null;
+                /*]]>*/
+            </script>
+            <div th:substituteby="_modules/vue-modal"></div>
+            <script th:src="@{/app/medico.js}"></script>
+        </div>
+    </body>
+</html>
+
+

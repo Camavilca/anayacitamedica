@@ -1,0 +1,78 @@
+<div th:fragment="SIDEBAR" id="aside" class="app-aside fade box-shadow-x nav-expand" aria-hidden="true">
+
+    <div class="sidenav modal-dialog dark">
+        <div class="brand-maipi mt-4">
+            <a th:href="@{/}"> Hospital </a>
+        </div>
+        <div class="logo m-5 brand-unalm">
+            <img th:src="@{/img/logo03.png}" alt="logo monitor">
+        </div>
+        <div class="flex hide-scroll">
+            <div class="scroll">
+                <div class="nav-stacked nav-active-success" data-nav="data-nav">
+                    <ul class="nav">
+                        <li class="active">
+                            <a th:href="@{/dashboard}" class="py-2">
+                                <span class="nav-icon"><i class="fal fa-tachometer-alt"></i></span>
+                                <span class="nav-text">DASHBOARD</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a th:href="@{/medico}" class="py-2">
+                                <span class="nav-icon"><i class="fas fa-users"></i></span>
+                                <span class="nav-text">MEDICOS</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a th:href="@{/paciente}" class="py-2">
+                                <span class="nav-icon"><i class="fas fa-users"></i></span>
+                                <span class="nav-text">PACIENTES</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a th:href="@{/citamedica}" class="py-2">
+                                <span class="nav-icon"><i class="fa fa-calendar"></i></span>
+                                <span class="nav-text">CITA MEDICA</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:fragment="TOPBAR"  class="content-header grey" id="content-header">
+
+    <div class="navbar navbar-expand-lg">
+        <a class="d-lg-none mx-2" data-toggle="modal" data-target="#aside">
+            <i class="fal fa-bars fa-2x"></i>
+        </a>
+
+        <div class="navbar-text flex" id="pageTitle">
+            <small class="text-muted">Tecsup</small>
+        </div>
+
+        <ul class="nav flex-row order-lg-2">
+
+            <li class="dropdown d-flex align-items-center">
+                <a href="#" data-toggle="dropdown" class="d-flex align-items-center">
+                    <span class="w-28 avatar circle green">
+                        OC
+                    </span>
+                    Orlando Camavilca
+                </a>
+                <div class="dropdown-menu dropdown-menu-right w pt-0 mt-2 animate fadeIn">
+                    <a class="dropdown-item" href="#">
+                        <span>Perfil</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">
+                        Ayuda
+                    </a>
+                    <a class="dropdown-item" th:href="@{/logout}">Salir</a>
+                </div>
+            </li>
+        </ul>       
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<modal-vik ref="areaModal"
+           v-bind="areaModal"
+           v-bind:okaction="closeModalArea">
+    <div slot="body">
+        <div class="card-body ">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input placeholder="Ingrese nombre" v-model="area.nombre" class="form-control" required="true"/>
+                    </div>
+                </div>
+                <div class="col-sm-3 mt-4 float-right">
+                    <button class="btn btn-success" v-on:click="saveArea">Guardar</button>
+                </div>
+            </div>
+        </div>
+        <div class="my-5">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="item in areas">
+                        <th><span v-text="item.nombre"></span></th>
+                        <th class="float-right">
+                            <a class="btn btn-danger" v-on:click="eliminarArea(item)">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</modal-vik>

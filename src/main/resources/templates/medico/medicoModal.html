@@ -1,0 +1,52 @@
+<modal-vik ref="medicoModal"
+           v-bind="medicoModal"
+           v-bind:okaction="save">
+    <div slot="body">
+        <div class="card-body ">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input placeholder="Ingrese nombre" v-model="medico.nombre" class="form-control" required="true"/>
+            </div>
+            <div class="form-group">
+                <label for="paterno">Apellido Paterno</label>
+                <input placeholder="Ingrese paterno" v-model="medico.paterno" class="form-control" required="true"/>
+            </div>
+            <div class="form-group">
+                <label for="materno">Apellido Materno</label>
+                <input placeholder="Ingrese materno" v-model="medico.materno" class="form-control" required="true"/>
+            </div>
+            <div class="form-group">
+                <label for="direccion">Direccion</label>
+                <input placeholder="Ingrese direccion" v-model="medico.direccion" class="form-control" required="true"/>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input placeholder="Ingrese email" v-model="medico.email" class="form-control" required="true"/>
+            </div>
+            <div class="form-group">
+                <label for="nombre">Telefono</label>
+                <input placeholder="Ingrese telefono" v-model="medico.telefono" class="form-control" required="true"/>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-9">
+                        <label for="area">Area</label>
+                        <multiselect 
+                            label="nombre" 
+                            track-by="id"
+                            v-model="medico.area" 
+                            v-bind:internal-search="false"
+                            v-bind:limit="15"
+                            placeholder="" 
+                            v-bind:options="areas" 
+                            v-bind:show-labels="false">
+                        </multiselect>
+                    </div>
+                    <div class="col-sm-3 mt-4">
+                        <button class="btn btn-primary btn-sm btn-block p-2" v-on:click="openModalArea">Agregar Area</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</modal-vik>

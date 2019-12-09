@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" class="app">
+    <head>
+        <title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE"> TEXSUP </title>
+
+        <th:block th:replace="_layout/includes :: STYLES" />
+        <th:block th:replace="_layout/includes :: FAVICON" />
+    </head>
+
+    <body>   
+        <section class="app" layout:fragment="BODY"> </section>
+
+        <th:block th:replace="_layout/includes :: JAVASCRIPT"/>
+
+        <section layout:fragment="JS"> JAVASCRIPTS </section>
+    </body>
+</html>

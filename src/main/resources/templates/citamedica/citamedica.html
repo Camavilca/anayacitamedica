@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html layout:decorator="_layout/layout">
+    <head>
+        <title>Medico</title>
+    </head>
+
+    <body>
+        <div layout:fragment="CONTAINER">
+            <section id="citamedicaVUE" class="animated fadeInDown  m-t-sxl" v-cloak="">
+                <div class="container">
+                    <div class="row mb-4">
+                        <div class="col-md-4">
+                            <h2 class="text-primary">
+                                Citas Medicas
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class=" card col-sm-12 col-md-12">
+                            <div class="card-body">
+                                <div th:replace="citamedica/citamedicaList"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div th:replace="citamedica/citamedicaModal"></div>
+            </section>
+        </div>
+        <div layout:fragment="JS">
+            <script th:inline="javascript">
+                /*<![CDATA[*/
+                var rutaModulo = /*[[${rutaModulo}]]*/ null;
+                /*]]>*/
+            </script>
+            <div th:substituteby="_modules/vue-modal"></div>
+            <div th:replace="_modules/vue-raptor-table"></div>
+            <script th:src="@{/app/citamedica.js}"></script>
+        </div>
+    </body>
+</html>
+
+

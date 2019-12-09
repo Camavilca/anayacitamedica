@@ -1,0 +1,65 @@
+RESUMEN:
+¿Por qué se hizo el proyecto?
+el proyecto se realizo para solucionar el problema de la empresa 
+ALBATROSS, 
+ ¿Qué se hizo?
+se realizo un software para un entorno web y sea administrada por algun
+miembro de la empresa.
+¿Cómo lo hizo?
+Se hizo uniendo dos tecnologias, los cuales son lenguaje de programacion JAVA y el  
+framework para front end VUEJS, tambien se hizo posible con las avilidades y conocimientos
+que pude adquirir.
+¿Qué resultados obtuvo?
+Los resultados fueron optimos para la empresa ya que con el proyecto que se realizo
+podran estar mas informados cuando una de sus aplicaciones tenga algun problema o cuando
+sufre un caida de servidor.
+contexto: la consultora albatross
+identificacion del caso especifico de estudio: la empresa cuenta con tres areas
+de las cuales una es para el desarrollo de software, otra para la administracion
+y otra de soporte tecnico. La gran cantidad de sistemas que fueron realizadas
+son para la universidad unalm.
+problema: el problema es que la consultora no cuenta con un sistema que monitoreé el estado
+de sus aplicaciones. Este conlleva a otros problemas, los cuales son perdida
+de dinero y perdida de confianza asia la empresa.
+solucion del problema: es por ello que surge la necesidad de desarrollar un fotware 
+para administrar otros software que fueron desarrollados por la empresa ALBATROSS, con 
+el fin de informar a los desarroladores o gerente si alguno de sus sistemas estan caidas o 
+presenten algun error.
+aspecto de la investigacion: el dasarrollo del mencionado portal se estimo como 
+una investigacion proyectiva de una duraccion de tres meses dando iniciado el 17 de diciembre
+hasta 21 de febrero.
+medodlogia empleada:Asimismo, se empleo la metodologia SCRUM, ya que se realizaron entregas 
+parciales y regulares del producto final al ingeniero encargado.
+
+
+MARCO TEORICO ::::
+
+
+
+JUSTIFICACION DEL PROYECTO::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->esto succede por la gran cantidad de alumnos que visitan los portales web de la 
+universidad

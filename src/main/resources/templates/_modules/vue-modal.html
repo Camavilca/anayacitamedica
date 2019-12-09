@@ -1,0 +1,79 @@
+<div>
+    <template id="modal-vik-template">
+        <transition name="modal">
+            <div v-bind:id="id" class="modal fade" tabindex="-1" role="dialog" 
+                 v-bind:data-backdrop="dataBackdrop" v-bind:data-keyboard="dataKeyboard">
+                <div class="modal-dialog" v-bind:class="modalsize" role="document">
+
+                    <div class="modal-content" v-bind:style="styleModal">
+                        <div v-if="header" class="modal-header">
+                            <slot name="header mb-3">
+                                <h4 class="modal-title">{{ title }}</h4>
+                                <button v-on:click="close"  type="button"  class="close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </slot>
+                        </div>
+                        <div class="modal-body" v-bind:class="modalscroll" >
+                            <slot name="body">
+                                <p>Modal Body</p>
+                            </slot>
+                        </div>
+                        <div v-if="footer"  class="modal-footer">
+                            <slot name="footer">
+                                <button v-on:click="close" type="button" class="btn" v-if="btnCancel" v-bind:class="cancelclass" data-dismiss="modal">{{cancelbtn}}</button>
+                                <!--<button v-if="showaccept" v-on:click="okaction" type="button" class="btn" v-bind:class="okclass">{{okbtn}}</button>-->
+                                <button v-if="showaccept" v-bind:disabled="processing" v-on:click="okaction" type="button" class="btn" v-bind:class="okclass"> <i v-if="processing" class="fa fa-spinner fa-pulse"></i> {{processing ? 'Procesando' : okbtn}}</button>
+                            </slot>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </transition>
+    </template>
+</div>
+<script>
+    // Ref: https://github.com/joturako/vue2-bootstrap-modal/tree/master/src
+
+    Vue.component('modal-vik', {
+        template: '#modal-vik-template',
+        props: {
+            id: {type: String, default: null},
+            header: {type: Boolean, default: false},
+            footer: {type: Boolean, default: true},
+            btnCancel: {type: Boolean, default: true},
+            title: {type: String, default: 'Modal Vik'},
+            okbtn: {type: String, default: 'Aceptar'},
+            okaction: {type: Function, default: () => {
+                }},
+            okclass: {type: String, default: 'btn-success'},
+            cancelbtn: {type: String, default: 'Cerrar'},
+            cancelaction: {type: Function, default: () => {
+                }},
+            cancelclass: {type: String, default: 'btn-default'},
+            modalsize: {type: String, default: "modal-lg"},
+            showaccept: {type: Boolean, default: true},
+            modalscroll: {type: String, default: ''},
+            styleModal: {type: Object, default: null},
+            dataBackdrop: {type: String, default: null},
+            processing: {type: Boolean, default: false},
+            dataKeyboard: {type: String, default: null},
+        },
+        methods: {
+            open() {
+                let $vue = this;
+                $('#' + $vue.id).modal('show');
+            },
+            close() {
+                let $vue = this;
+                $('#' + $vue.id).modal('hide');
+                this.cancelaction();
+            },
+            hide() {
+                let $vue = this;
+                $('#' + $vue.id).modal('hide');
+            }
+        }
+    });
+
+</script>
