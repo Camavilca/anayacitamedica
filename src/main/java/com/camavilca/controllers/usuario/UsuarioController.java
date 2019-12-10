@@ -58,8 +58,8 @@ public class UsuarioController {
             Usuario usua = service.iniciar(usuario);
             response.setMessage("Bienvenido");
             response.setSuccess(Boolean.TRUE);
-            List<String> datos = Arrays.asList("admin", usua.getNombre());
-            response.setData(datos);
+//            List<String> datos = Arrays.asList("admin", usua.getNombre());
+            response.setData(usua);
         } catch (PhobosException e) {
             ExceptionHandler.handlePhobosEx(e, response);
         } catch (Exception e) {

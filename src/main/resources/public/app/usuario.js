@@ -12,8 +12,8 @@ new Vue({
             axios.post("/registro", $vue.usuario).then(response => {
                 if (response.data.success) {
                     var datos = response.data.data;
-                    window.location.replace(`/dashboard`);
                     notify2(response.data.message, "success");
+                    window.location.replace(`/`);
                 } else {
                     notify2(response.data.message, "error");
                 }
@@ -26,8 +26,13 @@ new Vue({
             axios.post("/iniciar", $vue.usuario).then(response => {
                 if (response.data.success) {
                     var datos = response.data.data;
-                    window.location.replace(`/dashboard`);
-                    notify2(response.data.message, "success");
+                    if (datos.nombre != "admin") {
+                        notify2(`Bienvenido ${datos.nombre}`, "success");
+                        window.location.replace(`/usuario`);
+                    } else {
+                        window.location.replace(`/dashboard`);
+                        notify2(response.data.message, "success");
+                    }
                 } else {
                     notify2(response.data.message, "error");
                 }

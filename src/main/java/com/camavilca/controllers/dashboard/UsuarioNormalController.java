@@ -5,12 +5,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("dashboard")
-public class DashboardController {
+@RequestMapping("usuario")
+public class UsuarioNormalController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String index() {
-        return "dashboard/dashboard";
+        return "dashboard/usuario";
     }
 
 }

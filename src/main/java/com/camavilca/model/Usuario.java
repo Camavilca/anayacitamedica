@@ -33,6 +33,9 @@ public class Usuario implements Serializable {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "admin")
+    private Boolean admin;
+
     public Usuario() {
     }
 
@@ -86,6 +89,14 @@ public class Usuario implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Boolean getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Boolean admin) {
+        this.admin = admin;
     }
 
 }
