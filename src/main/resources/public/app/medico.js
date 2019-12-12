@@ -33,6 +33,9 @@ new Vue({
         const $vue = this;
         $vue.$refs.load.repreload();
         $vue.allAreaMedica();
+        if (localStorage.name) {
+            this.name = localStorage.name;
+        }
     },
     methods: {
         openModalMedico() {

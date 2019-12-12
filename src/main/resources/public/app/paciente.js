@@ -30,7 +30,7 @@ new Vue({
         },
         save() {
             let $vue = this;
-            axios.post("/paciente/save", $vue.paciente).then(response => {
+            axios.post("/registro", $vue.paciente).then(response => {
                 if (response.data.success) {
                     $vue.$refs.load.repreload();
                     $vue.$refs.pacienteModal.close();
@@ -53,7 +53,7 @@ new Vue({
                 confirmButtonText: "Aceptar"
             }).then(result => {
                 if (result.value) {
-                    axios.post("/paciente/delete", paciente).then(response => {
+                    axios.post("/delete", paciente).then(response => {
                         if (response.data.success) {
                             $vue.$refs.load.repreload();
                             notify2(response.data.message, "success");

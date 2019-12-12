@@ -2,6 +2,7 @@ package com.camavilca.controllers.usuario;
 
 import com.camavilca.dao.UsuarioDAO;
 import com.camavilca.model.Usuario;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,7 +25,22 @@ public class UsuarioServiceImp implements UsuarioService {
                 || usuario.getPassword() == null) {
             throw new PhobosException("Debe completar los campos");
         }
-        usuarioDAO.save(usuario);
+        if (usuario.getId() == null) {
+            usuarioDAO.save(usuario);
+        } else {
+            usuarioDAO.update(usuario);
+        }
+    }
+
+    @Override
+    public List<Usuario> all() {
+        return usuarioDAO.all();
+    }
+
+    @Override
+    @Transactional
+    public void delete(Usuario usuario) {
+        usuarioDAO.delete(usuario);
     }
 
     @Override

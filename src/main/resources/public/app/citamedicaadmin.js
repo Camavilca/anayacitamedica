@@ -35,14 +35,9 @@ new Vue({
         },
         save() {
             let $vue = this;
-            let usuario = JSON.parse(localStorage.getItem('usuario'));
-            console.log("*****************************************************");
-            console.log(usuario);
-            console.log("*****************************************************");
-            $vue.citamedica.usuario = usuario;
             axios.post("/citamedica/save", $vue.citamedica).then(response => {
                 if (response.data.success) {
-                    $vue.allCitasMedicas();
+                    $vue.$refs.load.repreload();
                     $vue.$refs.citamedicaModal.close();
                     notify2(response.data.message, "success");
                 } else {
@@ -53,6 +48,7 @@ new Vue({
             });
         },
         eliminar(citamedica) {
+            console.log(citamedica);
             let $vue = this;
             swal.fire({
                 title: "¿ Seguro que quieres Eliminar ?",
@@ -63,9 +59,11 @@ new Vue({
                 confirmButtonText: "Aceptar"
             }).then(result => {
                 if (result.value) {
+                    citamedica.fechaInicio = null;
+                    citamedica.fechaFin = null;
                     axios.post("/citamedica/delete", citamedica).then(response => {
                         if (response.data.success) {
-                            $vue.$refs.load.repreload();
+                            $vue.allCitasMedicas();
                             notify2(response.data.message, "success");
                         } else {
                             notify2(response.data.message, "error");

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.camavilca.controllers.citamedica;
 
 import com.camavilca.model.CitaMedica;
@@ -32,7 +27,7 @@ public class CitaMedicaController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String getIndex() {
-        return "citamedica/citamedica";
+        return "citamedicaadmin/citamedica";
     }
 
     @ResponseBody
@@ -63,13 +58,35 @@ public class CitaMedicaController {
         ArrayNode array = new ArrayNode(JsonNodeFactory.instance);
         citas.forEach((cita) -> {
             ObjectNode node = JsonHelper.createJson(cita, JsonNodeFactory.instance,
-                    new String[]{"*", "paciente.*", "medico.*"});
+                    new String[]{"*", "medico.*"});
             array.add(node);
         });
         json.setData(array);
         json.setTotal(filter.getTotal());
         json.setFiltered(filter.getFiltered());
         return json;
+    }
+
+    @ResponseBody
+    @RequestMapping("all")
+    public JsonResponse all() {
+        JsonResponse response = new JsonResponse();
+        JsonNodeFactory jsonFactory = JsonNodeFactory.instance;
+        ArrayNode arrayNode = new ArrayNode(jsonFactory);
+        try {
+            List<CitaMedica> pasientes = service.all();
+            for (CitaMedica pasiente : pasientes) {
+                ObjectNode node = JsonHelper.createJson(pasiente, jsonFactory, new String[]{"*", "medico.*", "usuario.*"});
+                arrayNode.add(node);
+            }
+            response.setData(arrayNode);
+            response.setSuccess(Boolean.TRUE);
+        } catch (PhobosException e) {
+            ExceptionHandler.handlePhobosEx(e, response);
+        } catch (Exception e) {
+            ExceptionHandler.handleException(e, response);
+        }
+        return response;
     }
 
     @ResponseBody

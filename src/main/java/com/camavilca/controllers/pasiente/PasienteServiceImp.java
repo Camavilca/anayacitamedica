@@ -5,6 +5,8 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.camavilca.dao.PasienteDAO;
+import com.camavilca.dao.UsuarioDAO;
+import com.camavilca.model.Usuario;
 import java.util.List;
 import pe.albatross.octavia.dynatable.DynatableFilter;
 
@@ -14,6 +16,8 @@ public class PasienteServiceImp implements PasienteService {
 
     @Autowired
     PasienteDAO pasienteDAO;
+    @Autowired
+    UsuarioDAO usuarioDAO;
 
     @Override
     @Transactional
@@ -39,6 +43,11 @@ public class PasienteServiceImp implements PasienteService {
     @Override
     public List<Paciente> allDynatable(DynatableFilter filter) {
         return pasienteDAO.all(filter);
+    }
+
+    @Override
+    public List<Usuario> allDynatableUsuario(DynatableFilter filter) {
+        return usuarioDAO.all(filter);
     }
 
 }

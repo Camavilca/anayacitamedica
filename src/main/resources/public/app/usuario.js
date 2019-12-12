@@ -26,6 +26,7 @@ new Vue({
             axios.post("/iniciar", $vue.usuario).then(response => {
                 if (response.data.success) {
                     var datos = response.data.data;
+                    localStorage.setItem('usuario', JSON.stringify(response.data.data));
                     if (datos.nombre != "admin") {
                         notify2(`Bienvenido ${datos.nombre}`, "success");
                         window.location.replace(`/usuario`);

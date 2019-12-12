@@ -24,6 +24,11 @@ public class Usuario implements Serializable {
     @Column(name = "apellido")
     private String apellido;
 
+    @Column(name = "direccion")
+    private String direccion;
+    @Column(name = "telefono")
+    private String telefono;
+
     @Column(name = "edad")
     private String edad;
 
@@ -97,6 +102,22 @@ public class Usuario implements Serializable {
 
     public void setAdmin(Boolean admin) {
         this.admin = admin;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
 }

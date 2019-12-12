@@ -31,7 +31,7 @@ public class CitaMedica implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "paciente_id")
-    private Paciente paciente;
+    private Usuario usuario;
 
     @Column(name = "fecha_inicio")
     @JsonDeserialize(using = DateDeserializer.class)
@@ -69,12 +69,12 @@ public class CitaMedica implements Serializable {
         this.medico = medico;
     }
 
-    public Paciente getPaciente() {
-        return paciente;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setPaciente(Paciente paciente) {
-        this.paciente = paciente;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     public Date getFechaInicio() {

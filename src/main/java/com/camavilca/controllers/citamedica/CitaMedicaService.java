@@ -12,4 +12,6 @@ public interface CitaMedicaService {
 
     void delete(CitaMedica citaMedica);
 
+    List<CitaMedica> all();
+
 }

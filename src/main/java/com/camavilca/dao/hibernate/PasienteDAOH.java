@@ -24,4 +24,6 @@ public class PasienteDAOH extends AbstractEasyDAO<Paciente> implements PasienteD
         return all(sql);
     }
 
+    
+
 }

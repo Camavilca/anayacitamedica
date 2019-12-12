@@ -161,14 +161,21 @@
                                             <input type="text" class="form-control" v-model='usuario.apellido' placeholder="Apellido"/>
                                         </div>
                                         <div class="form-group">
+                                            <input type="text" class="form-control" v-model='usuario.direccion' placeholder="direccion"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" v-model='usuario.telefono' placeholder="telefono"/>
+                                        </div>
+                                        <div class="form-group">
                                             <input type="text" class="form-control" v-model='usuario.edad' placeholder="Edad"/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" class="form-control" v-model='usuario.correo' placeholder="Usuario"/>
+                                            <input type="email" class="form-control" v-model='usuario.correo' placeholder="correo"/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" v-model='usuario.password' placeholder="Contraseña"/>
+                                            <input type="password" class="form-control" v-model='usuario.password' placeholder="password"/>
                                         </div>
+                                        
                                         <button class="btn btn-primary" v-on:click='registro'>Registrate</button>
                                     </div>
                                 </div>

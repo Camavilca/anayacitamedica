@@ -3,34 +3,34 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Direccion</th>
-                    <th>Edad</th>
-                    <th>Email</th>
-                    <th>Telefono</th>
+                    <th>Medico</th>
+                    <th>Paciente</th>
+                    <th>Fecha Inicio</th>
+                    <th>Fecha Fin</th>
+                    <th>Asunto</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                </td>
-                <tr v-for="item in props.data">
+                <tr v-for="item in citamedicas">
                     <td>
-                        <span v-text="item.nombre"></span>
-                    <td>
-                        <span v-text="item.apellido"></span>
+                        <span v-text="item.medico.nombre"></span><br>
+                        <small class="text-success text-uppercase">Correo: </small>
+                        <span class="badge badge-primary" v-text="item.medico.email"></span>
                     </td>
                     <td>
-                        <span v-text="item.direccion"></span>
+                        <span v-text="item.usuario.nombre"></span><br>
+                        <small class="text-success text-uppercase">Direccion: </small>
+                        <span class="badge badge-primary" v-text="item.usuario.direccion"></span>
                     </td>
                     <td>
-                        <span v-text="item.edad"></span>
+                        <span v-text="item.fechaInicio"></span>
                     </td>
                     <td>
-                        <span v-text="item.correo"></span>
+                        <span v-text="item.fechaFin"></span>
                     </td>
                     <td>
-                        <span v-text="item.telefono"></span>
+                        <span v-text="item.asunto"></span>
                     </td>
                     <td class="d-flex justify-content-end">
                         <div class="btn-group dropleft">
@@ -52,3 +52,6 @@
         </table>
     </template>
 </raptor-table>
+
+
+

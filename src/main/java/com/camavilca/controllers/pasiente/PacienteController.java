@@ -1,6 +1,7 @@
 package com.camavilca.controllers.pasiente;
 
 import com.camavilca.model.Paciente;
+import com.camavilca.model.Usuario;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -99,7 +100,7 @@ public class PacienteController {
     @RequestMapping("allDynatable")
     public DynatableResponse all(DynatableFilter filter) {
         DynatableResponse json = new DynatableResponse();
-        List<Paciente> pacientes = service.allDynatable(filter);
+        List<Usuario> pacientes = service.allDynatableUsuario(filter);
         ArrayNode array = new ArrayNode(JsonNodeFactory.instance);
         pacientes.forEach((paciente) -> {
             ObjectNode node = JsonHelper.createJson(paciente, JsonNodeFactory.instance,
@@ -111,5 +112,21 @@ public class PacienteController {
         json.setFiltered(filter.getFiltered());
         return json;
     }
+//    @ResponseBody
+//    @RequestMapping("allDynatable")
+//    public DynatableResponse all(DynatableFilter filter) {
+//        DynatableResponse json = new DynatableResponse();
+//        List<Paciente> pacientes = service.allDynatable(filter);
+//        ArrayNode array = new ArrayNode(JsonNodeFactory.instance);
+//        pacientes.forEach((paciente) -> {
+//            ObjectNode node = JsonHelper.createJson(paciente, JsonNodeFactory.instance,
+//                    new String[]{"*"});
+//            array.add(node);
+//        });
+//        json.setData(array);
+//        json.setTotal(filter.getTotal());
+//        json.setFiltered(filter.getFiltered());
+//        return json;
+//    }
 
 }
