@@ -1,4 +1,4 @@
-<html>
+<!--<html>
     <head>
         <title>Bienvenido</title>
         <meta charset="UTF-8">
@@ -50,16 +50,16 @@
         <div class="container mt-5">
 
 
-            <!--Carousel Wrapper-->
+            Carousel Wrapper
             <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
-                <!--Indicators-->
+                Indicators
                 <ol class="carousel-indicators">
                     <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
                     <li data-target="#carousel-example-2" data-slide-to="1"></li>
                     <li data-target="#carousel-example-2" data-slide-to="2"></li>
                 </ol>
-                <!--/.Indicators-->
-                <!--Slides-->
+                /.Indicators
+                Slides
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
                         <div class="view">
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <!--Mask color-->
+                        Mask color
                         <div class="view">
                             <img class="d-block w-100" height="500px" src="https://elcomercio-diariocorreo-prod.cdn.arcpublishing.com/resizer/uEe0JAqPNOuLw9ixmTNTYme98mA=/980x528/smart/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/AZR4PK4YF5CRPNSAVXYMLDPS6Y.jpg"
                                  alt="Second slide">
@@ -83,7 +83,7 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <!--Mask color-->
+                        Mask color
                         <div class="view">
                             <img class="d-block w-100" height="500px" src="https://www.pandasecurity.com/spain/mediacenter/src/uploads/2019/07/hospital.jpg"
                                  alt="Third slide">
@@ -94,8 +94,8 @@
                         </div>
                     </div>
                 </div>
-                <!--/.Slides-->
-                <!--Controls-->
+                /.Slides
+                Controls
                 <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
@@ -104,12 +104,12 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
-                <!--/.Controls-->
+                /.Controls
             </div>
-            <!--/.Carousel Wrapper-->
+            /.Carousel Wrapper
         </div>
 
-        <!-- Card Wider -->
+         Card Wider 
         <div class="container">
             <div class="card card-cascade wider my-5">
                 <div class="view view-cascade overlay">
@@ -138,4 +138,73 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"></script>
     </body>
 
+</html>-->
+
+<!DOCTYPE html>
+<html layout:decorator="_layout/layout2">
+    <head>
+        <title>Medico</title>
+    </head>
+
+    <body>
+        <div layout:fragment="CONTAINER">
+            <section id="citamedicaVUE" class="animated fadeInDown  m-t-sxl" v-cloak="">
+                <header class="container my-5"> 
+                    <nav class="navbar  navbar-expand-lg navbar-dark indigo">
+                        <a class="navbar-brand" href="#"><strong>Tecsup Medic</strong></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="/">Salir <span class="sr-only">(current)</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </header>
+                <div class="container">
+                    <div class="row">
+                        <div class=" card col-sm-12 col-md-12">
+                            <div class="card-body">
+                                <div th:replace="citamedica/citamedicaList"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="card card-cascade wider my-5">
+                        <div class="view view-cascade overlay">
+                            <img  class="card-img-top" src="http://www.sisol.gob.pe/wp-content/themes/sisol/assets/images/mapas/mapa-lima.svg" alt="Card image cap">
+                            <a href="#!">
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+                        <div class="card-body card-body-cascade text-center">
+                            <h4 class="card-title blue-text"><strong>Lugares en donde estamos presentes</strong></h4>
+                            <a class="px-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="px-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a>
+                            <a class="px-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div th:replace="citamedica/citamedicaModal"></div>
+            </section>
+        </div>
+        <div layout:fragment="JS">
+            <script th:inline="javascript">
+                /*<![CDATA[*/
+                var rutaModulo = /*[[${rutaModulo}]]*/ null;
+                /*]]>*/
+            </script>
+            <div th:substituteby="_modules/vue-modal"></div>
+            <div th:replace="_modules/vue-raptor-table"></div>
+            <script th:src="@{/app/citamedica.js}"></script>
+        </div>
+    </body>
 </html>
+
+
+

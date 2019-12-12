@@ -1,4 +1,4 @@
 FROM openjdk:8
 EXPOSE 8080
-ADD target/hospital.jar hospital.jar
-ENTRYPOINT ["java","-jar","/hospital.jar"]
+ADD target/interviews.jar interviews.jar
+ENTRYPOINT ["java","-jar","/interviews.jar"]
